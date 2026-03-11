@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>EnSolio | Property Maintenance & Operations</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+background:#f4f4f4;
+}
+
+header{
+background:#0b2d4d;
+color:white;
+text-align:center;
+padding:60px 20px;
+}
+
+section{
+padding:40px;
+max-width:900px;
+margin:auto;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:6px;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+button{
+background:#0b2d4d;
+color:white;
+border:none;
+padding:15px 25px;
+font-size:16px;
+cursor:pointer;
+border-radius:4px;
+}
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>EnSolio</h1>
+
+<h2>Property Maintenance & Workplace Operations</h2>
+
+<p>Reliable repairs, maintenance, and operational support for homes, offices, and property managers.</p>
+
+<button>Request Service</button>
+
+</header>
+
+<section>
+
+<h2>Services</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Property Maintenance</h3>
+<p>Repairs, fixtures, doors, cabinets, and minor improvements.</p>
+</div>
+
+<div class="card">
+<h3>Unit Turnovers</h3>
+<p>Preparation and repairs for rental property turnovers.</p>
+</div>
+
+<div class="card">
+<h3>Operational Support</h3>
+<p>Vendor coordination and workplace facility upkeep.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Contact</h2>
+
+<p>Email: info@ensolio.com</p>
+
+</section>
+
+<footer>
+
+<p>© 2026 EnSolio LLC</p>
+
+</footer>
+
+</body>
+
+</html>
