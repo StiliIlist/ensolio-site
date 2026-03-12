@@ -6,11 +6,11 @@
   <title>EnSolio | Property Maintenance & Workplace Operations</title>
   <meta
     name="description"
-    content="EnSolio provides property maintenance, unit turnovers, installations, and workplace operations support across the Bay Area."
+    content="EnSolio provides property maintenance, unit turnovers, installations, and workplace operations support across San Mateo County and the Bay Area."
   />
   <meta
     name="keywords"
-    content="property maintenance, handyman, unit turnover, workplace operations, Bay Area, San Mateo County, EnSolio"
+    content="property maintenance San Mateo County, handyman Bay Area, unit turnover services, workplace operations, EnSolio"
   />
   <style>
     :root{
@@ -26,13 +26,8 @@
       --max:1150px;
     }
 
-    *{
-      box-sizing:border-box;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
 
     body{
       margin:0;
@@ -42,15 +37,8 @@
       line-height:1.6;
     }
 
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
-
-    img{
-      max-width:100%;
-      display:block;
-    }
+    a{text-decoration:none;color:inherit;}
+    img{max-width:100%;display:block;}
 
     .container{
       width:min(92%, var(--max));
@@ -62,7 +50,6 @@
       top:0;
       z-index:1000;
       background:rgba(11,45,77,0.96);
-      backdrop-filter:blur(8px);
       border-bottom:1px solid rgba(255,255,255,0.10);
     }
 
@@ -78,12 +65,9 @@
       font-size:28px;
       font-weight:700;
       color:var(--white);
-      letter-spacing:0.5px;
     }
 
-    .brand span{
-      color:var(--gold);
-    }
+    .brand span{color:var(--gold);}
 
     .nav-links{
       display:flex;
@@ -96,9 +80,7 @@
       font-size:15px;
     }
 
-    .nav-links a:hover{
-      color:var(--gold);
-    }
+    .nav-links a:hover{color:var(--gold);}
 
     .nav-cta{
       display:inline-block;
@@ -116,7 +98,7 @@
       align-items:center;
       background:
         linear-gradient(rgba(11,45,77,0.68), rgba(11,45,77,0.68)),
-        url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
     }
 
     .hero-grid{
@@ -134,7 +116,6 @@
       border:1px solid rgba(255,255,255,0.24);
       border-radius:999px;
       font-size:13px;
-      letter-spacing:0.4px;
     }
 
     .hero h1{
@@ -158,15 +139,19 @@
 
     .btn{
       display:inline-block;
-      padding:14px 22px;
+      padding:12px 22px;
       border-radius:999px;
       font-weight:700;
       transition:0.2s ease;
+      border:none;
+      cursor:pointer;
+      text-align:center;
     }
 
     .btn-primary{
       background:var(--gold);
       color:#111;
+      min-width:180px;
     }
 
     .btn-secondary{
@@ -175,9 +160,7 @@
       background:rgba(255,255,255,0.08);
     }
 
-    .btn:hover{
-      transform:translateY(-1px);
-    }
+    .btn:hover{transform:translateY(-1px);}
 
     .hero-card{
       background:rgba(255,255,255,0.12);
@@ -197,13 +180,9 @@
       padding-left:18px;
     }
 
-    .hero-card li{
-      margin-bottom:10px;
-    }
+    .hero-card li{margin-bottom:10px;}
 
-    section{
-      padding:78px 0;
-    }
+    section{padding:78px 0;}
 
     .section-head{
       text-align:center;
@@ -247,9 +226,7 @@
       color:var(--gray);
     }
 
-    .service-area{
-      background:#eef3f8;
-    }
+    .service-area{background:#eef3f8;}
 
     .service-box{
       background:var(--white);
@@ -260,9 +237,7 @@
       overflow:hidden;
     }
 
-    .service-copy{
-      padding:36px;
-    }
+    .service-copy{padding:36px;}
 
     .service-copy h3{
       margin-top:0;
@@ -275,9 +250,7 @@
       margin:16px 0 0;
     }
 
-    .service-copy li{
-      margin-bottom:8px;
-    }
+    .service-copy li{margin-bottom:8px;}
 
     .map-frame{
       min-height:320px;
@@ -304,9 +277,7 @@
       object-fit:cover;
     }
 
-    .project-body{
-      padding:22px;
-    }
+    .project-body{padding:22px;}
 
     .project-body h3{
       margin:0 0 8px;
@@ -316,51 +287,6 @@
     .project-body p{
       margin:0;
       color:var(--gray);
-    }
-
-    .about-wrap{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:22px;
-    }
-
-    .about-box{
-      background:var(--white);
-      padding:30px;
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-    }
-
-    .about-box h3{
-      margin-top:0;
-      color:var(--navy);
-    }
-
-    .testimonials{
-      background:#f0f4f8;
-    }
-
-    .test-grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:22px;
-    }
-
-    .quote{
-      background:var(--white);
-      border-radius:var(--radius);
-      padding:26px;
-      box-shadow:var(--shadow);
-    }
-
-    .quote p{
-      margin:0 0 14px;
-      color:var(--gray);
-      font-style:italic;
-    }
-
-    .quote strong{
-      color:var(--navy);
     }
 
     .contact-wrap{
@@ -413,7 +339,7 @@
       resize:vertical;
     }
 
-    .note{
+    .footer-note{
       color:var(--gray);
       font-size:14px;
       margin-top:10px;
@@ -440,14 +366,11 @@
       flex-wrap:wrap;
     }
 
-    .footer-links a{
-      color:#dbe7f3;
-    }
+    .footer-links a{color:#dbe7f3;}
 
     @media (max-width: 980px){
       .hero-grid,
       .service-box,
-      .about-wrap,
       .contact-wrap{
         grid-template-columns:1fr;
       }
@@ -456,8 +379,7 @@
         grid-template-columns:repeat(2, 1fr);
       }
 
-      .projects,
-      .test-grid{
+      .projects{
         grid-template-columns:1fr;
       }
     }
@@ -469,25 +391,11 @@
         padding:14px 0;
       }
 
-      .nav-links{
-        gap:14px;
-      }
-
-      .cards{
-        grid-template-columns:1fr;
-      }
-
-      .hero{
-        min-height:auto;
-      }
-
-      .hero h1{
-        font-size:40px;
-      }
-
-      .section-head h2{
-        font-size:30px;
-      }
+      .nav-links{gap:14px;}
+      .cards{grid-template-columns:1fr;}
+      .hero{min-height:auto;}
+      .hero h1{font-size:40px;}
+      .section-head h2{font-size:30px;}
     }
   </style>
 </head>
@@ -500,7 +408,6 @@
         <a href="#services">Services</a>
         <a href="#areas">Service Area</a>
         <a href="#projects">Projects</a>
-        <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </div>
       <a class="nav-cta" href="#contact">Request Quote</a>
@@ -518,7 +425,7 @@
           and operational support.
         </p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact">Request Service</a>
+          <a class="btn btn-primary" href="#contact">Request Quote</a>
           <a class="btn btn-secondary" href="#services">View Services</a>
         </div>
       </div>
@@ -539,7 +446,7 @@
       <div class="section-head">
         <h2>Services</h2>
         <p>
-          Clear, practical support for properties and workplaces that need reliable
+          Practical support for properties and workplaces that need reliable
           maintenance and strong follow-through.
         </p>
       </div>
@@ -585,7 +492,6 @@
             <li>Redwood City</li>
             <li>San Bruno and nearby areas</li>
           </ul>
-          <p class="note">Update this list anytime as your service area expands.</p>
         </div>
         <iframe
           class="map-frame"
@@ -601,9 +507,9 @@
   <section id="projects">
     <div class="container">
       <div class="section-head">
-        <h2>Recent Project Types</h2>
+        <h2>Project Gallery</h2>
         <p>
-          You can replace these placeholders later with your own before-and-after photos.
+          Replace these placeholders with your real project photos as EnSolio grows.
         </p>
       </div>
 
@@ -617,7 +523,7 @@
         </div>
 
         <div class="project">
-          <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80" alt="Kitchen and unit turnover work" />
+          <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80" alt="Kitchen and turnover work" />
           <div class="project-body">
             <h3>Unit Turnover Support</h3>
             <p>Punch-list completion, readiness checks, and installation support between tenants.</p>
@@ -635,69 +541,12 @@
     </div>
   </section>
 
-  <section id="about">
-    <div class="container">
-      <div class="section-head">
-        <h2>About EnSolio</h2>
-        <p>
-          Built around reliability, practical problem-solving, and strong operational follow-through.
-        </p>
-      </div>
-
-      <div class="about-wrap">
-        <div class="about-box">
-          <h3>What we do</h3>
-          <p>
-            EnSolio supports property owners, managers, and businesses with maintenance,
-            installations, turnovers, and workplace operations assistance. The goal is simple:
-            help keep spaces functional, presentable, and ready for use.
-          </p>
-        </div>
-
-        <div class="about-box">
-          <h3>Why clients choose us</h3>
-          <p>
-            Clients need someone who communicates clearly, shows up reliably, and handles
-            work with care. EnSolio is positioned to deliver hands-on support with an
-            operations-minded approach.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="testimonials">
-    <div class="container">
-      <div class="section-head">
-        <h2>Testimonials</h2>
-        <p>
-          Replace these sample reviews with real customer feedback as you complete more projects.
-        </p>
-      </div>
-
-      <div class="test-grid">
-        <div class="quote">
-          <p>“Reliable, responsive, and easy to work with. The project was handled professionally from start to finish.”</p>
-          <strong>Sample Client Review</strong>
-        </div>
-        <div class="quote">
-          <p>“Great follow-through and strong attention to detail. We would absolutely use EnSolio again.”</p>
-          <strong>Sample Property Manager Review</strong>
-        </div>
-        <div class="quote">
-          <p>“Clear communication, quality work, and a practical approach to getting things done.”</p>
-          <strong>Sample Homeowner Review</strong>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="contact">
     <div class="container">
       <div class="section-head">
         <h2>Request a Quote</h2>
         <p>
-          Use this section as your lead capture area. For now, the form can email you directly.
+          Send your project details and EnSolio will follow up with next steps.
         </p>
       </div>
 
@@ -709,30 +558,30 @@
             Reach out and share the details.
           </p>
           <ul class="contact-list">
-            <li><strong>Email:</strong> info@ensolio.com</li>
+            <li><strong>Email:</strong> <a href="mailto:info@ensolio.com">info@ensolio.com</a></li>
             <li><strong>Service Area:</strong> San Mateo County and nearby Bay Area cities</li>
             <li><strong>Business:</strong> EnSolio LLC</li>
           </ul>
-          <p class="note">Update the email above once your business email is fully set up.</p>
         </div>
 
         <div class="form-card">
           <h3>Quick Inquiry Form</h3>
-          <form action="mailto:info@ensolio.com" method="post" enctype="text/plain">
-            <input type="text" name="name" placeholder="Your name" required />
-            <input type="email" name="email" placeholder="Your email" required />
-            <input type="text" name="phone" placeholder="Phone number" />
-            <select name="service">
+          <form action="https://formspree.io/f/yourformid" method="POST">
+            <input type="hidden" name="_subject" value="New EnSolio Website Request">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
+            <input type="text" name="phone" placeholder="Phone number">
+            <select name="service" required>
               <option value="">Select a service</option>
               <option>Property Maintenance</option>
               <option>Unit Turnover</option>
               <option>Installations</option>
               <option>Operations Support</option>
             </select>
-            <textarea name="message" placeholder="Tell us about the project"></textarea>
+            <textarea name="message" placeholder="Tell us about the project" required></textarea>
             <button class="btn btn-primary" type="submit">Send Request</button>
           </form>
-          <p class="note">We typically respond within 1 business day.</p>
+          <p class="footer-note">We typically respond within 1 business day.</p>
         </div>
       </div>
     </div>
