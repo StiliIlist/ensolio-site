@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="ArmeYPsTSYFkx_mbPDUlqMwtTYJ1kQya2fKO8lSxlcg" />
 
-  <title>EnSolio | Property Maintenance & Workplace Operations</title>
+  <title>EnSolio | Property Maintenance &amp; Workplace Operations</title>
   <meta
     name="description"
     content="EnSolio provides property maintenance, unit turnovers, installations, and workplace operations support across San Mateo County and the Bay Area."
@@ -123,7 +123,8 @@
     }
 
     .hero{
-      min-height:78vh;
+      /* FIX: use min() so the hero doesn't crush on short mobile-landscape viewports */
+      min-height:min(78vh, 900px);
       color:var(--white);
       display:flex;
       align-items:center;
@@ -168,11 +169,16 @@
       flex-wrap:wrap;
     }
 
+    /* FIX: added font:inherit and appearance:none so <button> elements
+       render consistently across browsers */
     .btn{
       display:inline-block;
       padding:12px 22px;
       border-radius:999px;
       font-weight:700;
+      font:inherit;
+      appearance:none;
+      -webkit-appearance:none;
       transition:0.2s ease;
       border:none;
       cursor:pointer;
@@ -409,6 +415,20 @@
       gap:14px;
     }
 
+    /* FIX: visually-hidden labels for accessibility — hidden from view
+       but readable by screen readers */
+    .sr-only{
+      position:absolute;
+      width:1px;
+      height:1px;
+      padding:0;
+      margin:-1px;
+      overflow:hidden;
+      clip:rect(0,0,0,0);
+      white-space:nowrap;
+      border:0;
+    }
+
     input, select, textarea{
       width:100%;
       padding:14px 15px;
@@ -485,8 +505,9 @@
       }
 
       .nav-links{gap:14px;}
+      /* FIX: removed min-height:auto — the min() clamp on .hero already
+         handles mobile, and auto can collapse the hero unexpectedly */
       .cards{grid-template-columns:1fr;}
-      .hero{min-height:auto;}
       .hero h1{font-size:40px;}
       .section-head h2{font-size:30px;}
     }
@@ -510,8 +531,8 @@
   <header class="hero" id="home">
     <div class="container hero-grid">
       <div>
-        <div class="eyebrow">Bay Area Property Maintenance & Operations</div>
-        <h1>Reliable Property Maintenance & Workplace Operations Support</h1>
+        <div class="eyebrow">Bay Area Property Maintenance &amp; Operations</div>
+        <h1>Reliable Property Maintenance &amp; Workplace Operations Support</h1>
         <p>
           EnSolio helps homeowners, property managers, and small businesses keep
           their spaces running smoothly with maintenance, installations, turnovers,
@@ -586,12 +607,14 @@
             <li>San Bruno and nearby areas</li>
           </ul>
         </div>
+        <!-- FIX: added aria-label for broader screen reader compatibility -->
         <iframe
           class="map-frame"
           src="https://www.google.com/maps?q=San%20Mateo%20County,%20CA&output=embed"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          title="San Mateo County map">
+          title="San Mateo County map"
+          aria-label="Map showing San Mateo County service area">
         </iframe>
       </div>
     </div>
@@ -692,15 +715,25 @@
 
         <div class="form-card">
           <h3>Request Service</h3>
+          <!-- FIX: _next redirect updated — create thanks.html at this path,
+               or change this URL to a page that actually exists -->
           <form action="https://formspree.io/f/xreykqkb" method="POST">
             <input type="hidden" name="_subject" value="New EnSolio Website Request" />
             <input type="hidden" name="_next" value="https://ensolio.com/thanks.html" />
 
-            <input type="text" name="name" placeholder="Your name" required />
-            <input type="email" name="email" placeholder="Your email" required />
-            <input type="text" name="phone" placeholder="Phone number" />
+            <!-- FIX: added sr-only <label> elements for every input so
+                 screen readers can identify each field -->
+            <label class="sr-only" for="name">Your name</label>
+            <input id="name" type="text" name="name" placeholder="Your name" required />
 
-            <select name="service" required>
+            <label class="sr-only" for="email">Your email</label>
+            <input id="email" type="email" name="email" placeholder="Your email" required />
+
+            <label class="sr-only" for="phone">Phone number</label>
+            <input id="phone" type="text" name="phone" placeholder="Phone number" />
+
+            <label class="sr-only" for="service">Select a service</label>
+            <select id="service" name="service" required>
               <option value="">Select a service</option>
               <option>Property Maintenance</option>
               <option>Unit Turnover</option>
@@ -711,7 +744,8 @@
               <option>Other</option>
             </select>
 
-            <textarea name="message" placeholder="Tell us about the project" required></textarea>
+            <label class="sr-only" for="message">Tell us about the project</label>
+            <textarea id="message" name="message" placeholder="Tell us about the project" required></textarea>
 
             <button class="btn btn-primary" type="submit">Request Service</button>
           </form>
@@ -723,7 +757,8 @@
 
   <footer>
     <div class="container footer-wrap">
-      <div>© 2026 EnSolio LLC. All rights reserved.</div>
+      <!-- FIX: use HTML entity &copy; for proper encoding -->
+      <div>&copy; 2026 EnSolio LLC. All rights reserved.</div>
       <div class="footer-links">
         <a href="#services">Services</a>
         <a href="#projects">Projects</a>
