@@ -1,33 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "HomeAndConstructionBusiness",
- "name": "EnSolio LLC",
- "url": "https://ensolio.com",
- "email": "info@ensolio.com",
-    <li><strong>LinkedIn:</strong> 
-  <a href="https://www.linkedin.com/company/https://www.linkedin.com/company/ensolio/" target="_blank" rel="noopener noreferrer">
-    EnSolio on LinkedIn
-  </a>
-</li>
- "areaServed": {
-   "@type": "Place",
-   "name": "San Mateo County, California"
- },
- "serviceType": [
-   "Property Maintenance",
-   "Unit Turnover Services",
-   "Handyman Services",
-   "Installations"
- ]
-}
-  </script>
 <head>
-  <meta name="google-site-verification" content="ArmeYPsTSYFkx_mbPDUlqMwtTYJ1kQya2fKO8lSxlcg" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="ArmeYPsTSYFkx_mbPDUlqMwtTYJ1kQya2fKO8lSxlcg" />
+
   <title>EnSolio | Property Maintenance & Workplace Operations</title>
   <meta
     name="description"
@@ -37,6 +14,32 @@
     name="keywords"
     content="property maintenance San Mateo County, handyman Bay Area, unit turnover services, workplace operations, EnSolio"
   />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "EnSolio LLC",
+    "url": "https://ensolio.com",
+    "email": "info@ensolio.com",
+    "telephone": "+1-480-278-3938",
+    "sameAs": [
+      "https://www.linkedin.com/company/ensolio/"
+    ],
+    "areaServed": {
+      "@type": "Place",
+      "name": "San Mateo County, California"
+    },
+    "serviceType": [
+      "Property Maintenance",
+      "Unit Turnover Services",
+      "Handyman Services",
+      "Installations",
+      "Workplace Operations Support"
+    ]
+  }
+  </script>
+
   <style>
     :root{
       --navy:#0b2d4d;
@@ -46,9 +49,12 @@
       --dark:#1f2937;
       --gray:#6b7280;
       --card:#ffffff;
+      --border:#e5e7eb;
       --shadow:0 10px 25px rgba(0,0,0,0.10);
       --radius:14px;
       --max:1150px;
+      --linkedin:#0A66C2;
+      --linkedin-dark:#004182;
     }
 
     *{box-sizing:border-box;}
@@ -318,20 +324,23 @@
       display:grid;
       grid-template-columns:0.95fr 1.05fr;
       gap:22px;
+      align-items:stretch;
     }
 
     .contact-card,
     .form-card{
       background:var(--white);
-      border-radius:var(--radius);
+      border-radius:18px;
       padding:30px;
-      box-shadow:var(--shadow);
+      box-shadow:0 8px 24px rgba(15, 23, 42, 0.08);
     }
 
     .contact-card h3,
     .form-card h3{
       margin-top:0;
+      margin-bottom:10px;
       color:var(--navy);
+      font-size:22px;
     }
 
     .contact-list{
@@ -341,8 +350,58 @@
     }
 
     .contact-list li{
-      margin-bottom:12px;
+      margin-bottom:14px;
       color:var(--gray);
+    }
+
+    .contact-list a{
+      color:var(--gray);
+      text-decoration:none;
+    }
+
+    .contact-list a:hover{
+      text-decoration:underline;
+    }
+
+    .linkedin-link{
+      color:var(--linkedin) !important;
+      font-weight:600;
+    }
+
+    .linkedin-link:hover{
+      color:var(--linkedin-dark) !important;
+    }
+
+    .contact-extra{
+      margin-top:24px;
+      padding-top:18px;
+      border-top:1px solid var(--border);
+    }
+
+    .contact-extra h4{
+      margin:0 0 10px;
+      color:var(--navy);
+      font-size:18px;
+    }
+
+    .contact-extra ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--gray);
+    }
+
+    .contact-extra li{
+      margin-bottom:8px;
+    }
+
+    .trust-note{
+      margin-top:18px;
+      padding:12px 14px;
+      background:#f8fafc;
+      border:1px solid var(--border);
+      border-radius:10px;
+      color:var(--gray);
+      font-size:14px;
     }
 
     form{
@@ -357,6 +416,15 @@
       border-radius:10px;
       font:inherit;
       background:#fff;
+      transition:border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus{
+      outline:none;
+      border-color:var(--linkedin);
+      box-shadow:0 0 0 3px rgba(10, 102, 194, 0.15);
     }
 
     textarea{
@@ -367,7 +435,7 @@
     .footer-note{
       color:var(--gray);
       font-size:14px;
-      margin-top:10px;
+      margin-top:12px;
     }
 
     footer{
@@ -582,37 +650,71 @@
             Ready to discuss a repair, turnover, installation, or workplace support need?
             Reach out and share the details.
           </p>
-         <ul class="contact-list">
-  <li><strong>Email:</strong> <a href="mailto:info@ensolio.com">info@ensolio.com</a></li>
-      <strong>LinkedIn:</strong> 
-      <a href="https://www.linkedin.com/company/ensolio" target="_blank" style="color:#0A66C2; text-decoration:none;">
-      Connect with EnSolio
-      </a>
 
-  <li><strong>Service Area:</strong> San Mateo County and nearby Bay Area cities</li>
-  <li><strong>Phone:</strong> (480) 278 3938 </li>         
-  <li><strong>Business:</strong> EnSolio LLC</li>
-</ul>
+          <ul class="contact-list">
+            <li>
+              <strong>Email:</strong>
+              <a href="mailto:info@ensolio.com">info@ensolio.com</a>
+            </li>
+            <li>
+              <strong>LinkedIn:</strong>
+              <a
+                href="https://www.linkedin.com/company/ensolio/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="linkedin-link"
+              >
+                Connect with EnSolio
+              </a>
+            </li>
+            <li><strong>Service Area:</strong> San Mateo County and nearby Bay Area cities</li>
+            <li>
+              <strong>Phone:</strong>
+              <a href="tel:+14802783938">(480) 278 3938</a>
+            </li>
+            <li><strong>Business:</strong> EnSolio LLC</li>
+          </ul>
+
+          <div class="contact-extra">
+            <h4>What we help with</h4>
+            <ul>
+              <li>Property maintenance</li>
+              <li>Unit turnover support</li>
+              <li>Installations and repairs</li>
+              <li>Workplace operations support</li>
+            </ul>
+          </div>
+
+          <div class="trust-note">
+            Typically responds within 1 business day.
+          </div>
         </div>
 
         <div class="form-card">
-          <h3>Quick Inquiry Form</h3>
+          <h3>Request Service</h3>
           <form action="https://formspree.io/f/xreykqkb" method="POST">
-  <input type="hidden" name="_subject" value="New EnSolio Website Request">
-            <input type="hidden" name="_next" value="https://ensolio.com/thanks.html">
-  <input type="text" name="name" placeholder="Your name" required>
-  <input type="email" name="email" placeholder="Your email" required>
-  <input type="text" name="phone" placeholder="Phone number">
-  <select name="service" required>
-    <option value="">Select a service</option>
-    <option>Property Maintenance</option>
-    <option>Unit Turnover</option>
-    <option>Installations</option>
-    <option>Operations Support</option>
-  </select>
-  <textarea name="message" placeholder="Tell us about the project" required></textarea>
-  <button class="btn btn-primary" type="submit">Send Request</button>
-</form>
+            <input type="hidden" name="_subject" value="New EnSolio Website Request" />
+            <input type="hidden" name="_next" value="https://ensolio.com/thanks.html" />
+
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="Your email" required />
+            <input type="text" name="phone" placeholder="Phone number" />
+
+            <select name="service" required>
+              <option value="">Select a service</option>
+              <option>Property Maintenance</option>
+              <option>Unit Turnover</option>
+              <option>Repair Request</option>
+              <option>Installations</option>
+              <option>Preventive Maintenance</option>
+              <option>Operations Support</option>
+              <option>Other</option>
+            </select>
+
+            <textarea name="message" placeholder="Tell us about the project" required></textarea>
+
+            <button class="btn btn-primary" type="submit">Request Service</button>
+          </form>
           <p class="footer-note">We typically respond within 1 business day.</p>
         </div>
       </div>
