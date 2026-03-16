@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="ArmeYPsTSYFkx_mbPDUlqMwtTYJ1kQya2fKO8lSxlcg" />
 
-  <title>EnSolio | Property Maintenance &amp; Workplace Operations</title>
+  <title>EnSolio | Property Maintenance &amp; Workplace Operations – San Mateo County</title>
+
+  <!-- SEO: canonical tag prevents duplicate-URL indexing (http vs https, www vs non-www) -->
+  <link rel="canonical" href="https://ensolio.com/" />
+
   <meta
     name="description"
     content="EnSolio provides property maintenance, unit turnovers, installations, and workplace operations support across San Mateo County and the Bay Area."
@@ -15,6 +19,23 @@
     content="property maintenance San Mateo County, handyman Bay Area, unit turnover services, workplace operations, EnSolio"
   />
 
+  <!-- SEO: Open Graph — rich previews when shared on LinkedIn, Facebook, iMessage, etc. -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://ensolio.com/" />
+  <meta property="og:title"       content="EnSolio | Property Maintenance &amp; Workplace Operations" />
+  <meta property="og:description" content="EnSolio provides property maintenance, unit turnovers, installations, and workplace operations support across San Mateo County and the Bay Area." />
+  <meta property="og:image"       content="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" />
+  <meta property="og:locale"      content="en_US" />
+  <meta property="og:site_name"   content="EnSolio" />
+
+  <!-- SEO: Twitter/X card — rich link previews on Twitter/X -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:url"         content="https://ensolio.com/" />
+  <meta name="twitter:title"       content="EnSolio | Property Maintenance &amp; Workplace Operations" />
+  <meta name="twitter:description" content="Property maintenance, unit turnovers, installations, and workplace operations support across San Mateo County and the Bay Area." />
+  <meta name="twitter:image"       content="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- SEO: JSON-LD structured data — expanded with address, geo, hours, and per-city areaServed -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -23,13 +44,34 @@
     "url": "https://ensolio.com",
     "email": "info@ensolio.com",
     "telephone": "+1-480-278-3938",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "CA",
+      "addressCountry": "US",
+      "addressLocality": "San Mateo County"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 37.5630,
+      "longitude": -122.3255
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
     "sameAs": [
       "https://www.linkedin.com/company/ensolio/"
     ],
-    "areaServed": {
-      "@type": "Place",
-      "name": "San Mateo County, California"
-    },
+    "areaServed": [
+      { "@type": "City", "name": "Millbrae, CA" },
+      { "@type": "City", "name": "Burlingame, CA" },
+      { "@type": "City", "name": "San Mateo, CA" },
+      { "@type": "City", "name": "South San Francisco, CA" },
+      { "@type": "City", "name": "Redwood City, CA" },
+      { "@type": "City", "name": "San Bruno, CA" }
+    ],
     "serviceType": [
       "Property Maintenance",
       "Unit Turnover Services",
@@ -123,7 +165,7 @@
     }
 
     .hero{
-      /* FIX: use min() so the hero doesn't crush on short mobile-landscape viewports */
+      /* min() prevents hero from crushing on short mobile-landscape viewports */
       min-height:min(78vh, 900px);
       color:var(--white);
       display:flex;
@@ -169,8 +211,7 @@
       flex-wrap:wrap;
     }
 
-    /* FIX: added font:inherit and appearance:none so <button> elements
-       render consistently across browsers */
+    /* font:inherit + appearance:none ensures <button> renders consistently across browsers */
     .btn{
       display:inline-block;
       padding:12px 22px;
@@ -415,8 +456,7 @@
       gap:14px;
     }
 
-    /* FIX: visually-hidden labels for accessibility — hidden from view
-       but readable by screen readers */
+    /* Visually hidden but readable by screen readers */
     .sr-only{
       position:absolute;
       width:1px;
@@ -505,8 +545,7 @@
       }
 
       .nav-links{gap:14px;}
-      /* FIX: removed min-height:auto — the min() clamp on .hero already
-         handles mobile, and auto can collapse the hero unexpectedly */
+      /* min() clamp on .hero already handles mobile height — no override needed */
       .cards{grid-template-columns:1fr;}
       .hero h1{font-size:40px;}
       .section-head h2{font-size:30px;}
@@ -518,17 +557,21 @@
   <div class="topbar">
     <div class="container nav">
       <a href="#home" class="brand">EN<span>SOLIO</span></a>
-      <div class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#areas">Service Area</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
+      <!-- SEO: wrapped in <nav> so Google identifies this as site navigation -->
+      <nav aria-label="Main navigation">
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#areas">Service Area</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
       <a class="nav-cta" href="#contact">Request Quote</a>
     </div>
   </div>
 
-  <header class="hero" id="home">
+  <!-- role="banner" signals the top-level site header to assistive tech and crawlers -->
+  <header class="hero" id="home" role="banner">
     <div class="container hero-grid">
       <div>
         <div class="eyebrow">Bay Area Property Maintenance &amp; Operations</div>
@@ -555,209 +598,236 @@
     </div>
   </header>
 
-  <section id="services">
-    <div class="container">
-      <div class="section-head">
-        <h2>Services</h2>
-        <p>
-          Practical support for properties and workplaces that need reliable
-          maintenance and strong follow-through.
-        </p>
-      </div>
+  <!-- SEO: <main> landmark tells Google this is the primary page content -->
+  <main>
 
-      <div class="cards">
-        <div class="card">
-          <h3>Property Maintenance</h3>
-          <p>Doors, hardware, fixtures, caulking, minor repairs, adjustments, and upkeep tasks.</p>
-        </div>
-        <div class="card">
-          <h3>Unit Turnovers</h3>
-          <p>Move-out punch lists, basic repairs, touch-ups, and readiness support between tenants.</p>
-        </div>
-        <div class="card">
-          <h3>Installations</h3>
-          <p>Lights, faucets, shelving, appliances, smart devices, and other non-structural installs.</p>
-        </div>
-        <div class="card">
-          <h3>Operations Support</h3>
-          <p>Vendor coordination, facility checks, workplace upkeep, and project follow-up support.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="service-area" id="areas">
-    <div class="container">
-      <div class="section-head">
-        <h2>Service Area</h2>
-        <p>
-          Based in the Bay Area and serving nearby cities with flexible scheduling and dependable support.
-        </p>
-      </div>
-
-      <div class="service-box">
-        <div class="service-copy">
-          <h3>Serving San Mateo County and nearby Bay Area locations</h3>
-          <ul>
-            <li>Millbrae</li>
-            <li>Burlingame</li>
-            <li>San Mateo</li>
-            <li>South San Francisco</li>
-            <li>Redwood City</li>
-            <li>San Bruno and nearby areas</li>
-          </ul>
-        </div>
-        <!-- FIX: added aria-label for broader screen reader compatibility -->
-        <iframe
-          class="map-frame"
-          src="https://www.google.com/maps?q=San%20Mateo%20County,%20CA&output=embed"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="San Mateo County map"
-          aria-label="Map showing San Mateo County service area">
-        </iframe>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="container">
-      <div class="section-head">
-        <h2>Project Gallery</h2>
-        <p>
-          Replace these placeholders with your real project photos as EnSolio grows.
-        </p>
-      </div>
-
-      <div class="projects">
-        <div class="project">
-          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Residential maintenance project" />
-          <div class="project-body">
-            <h3>Residential Maintenance</h3>
-            <p>Repairs, fixture swaps, adjustments, and general upkeep for rental and owner-occupied properties.</p>
-          </div>
-        </div>
-
-        <div class="project">
-          <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80" alt="Kitchen and turnover work" />
-          <div class="project-body">
-            <h3>Unit Turnover Support</h3>
-            <p>Punch-list completion, readiness checks, and installation support between tenants.</p>
-          </div>
-        </div>
-
-        <div class="project">
-          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" alt="Workplace operations support" />
-          <div class="project-body">
-            <h3>Workplace Operations</h3>
-            <p>Light facilities support, vendor coordination, and practical workplace maintenance help.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <div class="section-head">
-        <h2>Request a Quote</h2>
-        <p>
-          Send your project details and EnSolio will follow up with next steps.
-        </p>
-      </div>
-
-      <div class="contact-wrap">
-        <div class="contact-card">
-          <h3>Contact EnSolio</h3>
+    <section id="services" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="services-heading">Services</h2>
           <p>
-            Ready to discuss a repair, turnover, installation, or workplace support need?
-            Reach out and share the details.
+            Practical support for properties and workplaces that need reliable
+            maintenance and strong follow-through.
           </p>
+        </div>
 
-          <ul class="contact-list">
-            <li>
-              <strong>Email:</strong>
-              <a href="mailto:info@ensolio.com">info@ensolio.com</a>
-            </li>
-            <li>
-              <strong>LinkedIn:</strong>
-              <a
-                href="https://www.linkedin.com/company/ensolio/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="linkedin-link"
-              >
-                Connect with EnSolio
-              </a>
-            </li>
-            <li><strong>Service Area:</strong> San Mateo County and nearby Bay Area cities</li>
-            <li>
-              <strong>Phone:</strong>
-              <a href="tel:+14802783938">(480) 278 3938</a>
-            </li>
-            <li><strong>Business:</strong> EnSolio LLC</li>
-          </ul>
+        <div class="cards">
+          <div class="card">
+            <h3>Property Maintenance</h3>
+            <p>Doors, hardware, fixtures, caulking, minor repairs, adjustments, and upkeep tasks.</p>
+          </div>
+          <div class="card">
+            <h3>Unit Turnovers</h3>
+            <p>Move-out punch lists, basic repairs, touch-ups, and readiness support between tenants.</p>
+          </div>
+          <div class="card">
+            <h3>Installations</h3>
+            <p>Lights, faucets, shelving, appliances, smart devices, and other non-structural installs.</p>
+          </div>
+          <div class="card">
+            <h3>Operations Support</h3>
+            <p>Vendor coordination, facility checks, workplace upkeep, and project follow-up support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="contact-extra">
-            <h4>What we help with</h4>
+    <section class="service-area" id="areas" aria-labelledby="areas-heading">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="areas-heading">Service Area</h2>
+          <p>
+            Based in the Bay Area and serving nearby cities with flexible scheduling and dependable support.
+          </p>
+        </div>
+
+        <div class="service-box">
+          <div class="service-copy">
+            <h3>Serving San Mateo County and nearby Bay Area locations</h3>
             <ul>
-              <li>Property maintenance</li>
-              <li>Unit turnover support</li>
-              <li>Installations and repairs</li>
-              <li>Workplace operations support</li>
+              <li>Millbrae</li>
+              <li>Burlingame</li>
+              <li>San Mateo</li>
+              <li>South San Francisco</li>
+              <li>Redwood City</li>
+              <li>San Bruno and nearby areas</li>
             </ul>
           </div>
-
-          <div class="trust-note">
-            Typically responds within 1 business day.
-          </div>
-        </div>
-
-        <div class="form-card">
-          <h3>Request Service</h3>
-          <!-- FIX: _next redirect updated — create thanks.html at this path,
-               or change this URL to a page that actually exists -->
-          <form action="https://formspree.io/f/xreykqkb" method="POST">
-            <input type="hidden" name="_subject" value="New EnSolio Website Request" />
-            <input type="hidden" name="_next" value="https://ensolio.com/thanks.html" />
-
-            <!-- FIX: added sr-only <label> elements for every input so
-                 screen readers can identify each field -->
-            <label class="sr-only" for="name">Your name</label>
-            <input id="name" type="text" name="name" placeholder="Your name" required />
-
-            <label class="sr-only" for="email">Your email</label>
-            <input id="email" type="email" name="email" placeholder="Your email" required />
-
-            <label class="sr-only" for="phone">Phone number</label>
-            <input id="phone" type="text" name="phone" placeholder="Phone number" />
-
-            <label class="sr-only" for="service">Select a service</label>
-            <select id="service" name="service" required>
-              <option value="">Select a service</option>
-              <option>Property Maintenance</option>
-              <option>Unit Turnover</option>
-              <option>Repair Request</option>
-              <option>Installations</option>
-              <option>Preventive Maintenance</option>
-              <option>Operations Support</option>
-              <option>Other</option>
-            </select>
-
-            <label class="sr-only" for="message">Tell us about the project</label>
-            <textarea id="message" name="message" placeholder="Tell us about the project" required></textarea>
-
-            <button class="btn btn-primary" type="submit">Request Service</button>
-          </form>
-          <p class="footer-note">We typically respond within 1 business day.</p>
+          <iframe
+            class="map-frame"
+            src="https://www.google.com/maps?q=San%20Mateo%20County,%20CA&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="San Mateo County map"
+            aria-label="Map showing San Mateo County service area">
+          </iframe>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>
+    <section id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="projects-heading">Project Gallery</h2>
+          <p>
+            Replace these placeholders with your real project photos as EnSolio grows.
+          </p>
+        </div>
+
+        <div class="projects">
+          <div class="project">
+            <!--
+              SEO TIP: When replacing placeholder images use descriptive filenames
+              (e.g. fixture-repair-burlingame.jpg) and location-specific alt text
+              like "Bathroom fixture repair in Burlingame CA" for local SEO signals.
+            -->
+            <img
+              src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80"
+              alt="Residential property maintenance project in San Mateo County"
+              width="1200" height="220"
+              loading="lazy"
+            />
+            <div class="project-body">
+              <h3>Residential Maintenance</h3>
+              <p>Repairs, fixture swaps, adjustments, and general upkeep for rental and owner-occupied properties.</p>
+            </div>
+          </div>
+
+          <div class="project">
+            <img
+              src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80"
+              alt="Unit turnover and kitchen readiness work between tenants"
+              width="1200" height="220"
+              loading="lazy"
+            />
+            <div class="project-body">
+              <h3>Unit Turnover Support</h3>
+              <p>Punch-list completion, readiness checks, and installation support between tenants.</p>
+            </div>
+          </div>
+
+          <div class="project">
+            <img
+              src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80"
+              alt="Workplace operations and facilities support in the Bay Area"
+              width="1200" height="220"
+              loading="lazy"
+            />
+            <div class="project-body">
+              <h3>Workplace Operations</h3>
+              <p>Light facilities support, vendor coordination, and practical workplace maintenance help.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="contact-heading">Request a Quote</h2>
+          <p>
+            Send your project details and EnSolio will follow up with next steps.
+          </p>
+        </div>
+
+        <div class="contact-wrap">
+          <div class="contact-card">
+            <h3>Contact EnSolio</h3>
+            <p>
+              Ready to discuss a repair, turnover, installation, or workplace support need?
+              Reach out and share the details.
+            </p>
+
+            <ul class="contact-list">
+              <li>
+                <strong>Email:</strong>
+                <a href="mailto:info@ensolio.com">info@ensolio.com</a>
+              </li>
+              <li>
+                <strong>LinkedIn:</strong>
+                <a
+                  href="https://www.linkedin.com/company/ensolio/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="linkedin-link"
+                >
+                  Connect with EnSolio
+                </a>
+              </li>
+              <li><strong>Service Area:</strong> San Mateo County and nearby Bay Area cities</li>
+              <li>
+                <strong>Phone:</strong>
+                <a href="tel:+14802783938">(480) 278-3938</a>
+              </li>
+              <li><strong>Business:</strong> EnSolio LLC</li>
+            </ul>
+
+            <div class="contact-extra">
+              <h4>What we help with</h4>
+              <ul>
+                <li>Property maintenance</li>
+                <li>Unit turnover support</li>
+                <li>Installations and repairs</li>
+                <li>Workplace operations support</li>
+              </ul>
+            </div>
+
+            <div class="trust-note">
+              Typically responds within 1 business day.
+            </div>
+          </div>
+
+          <div class="form-card">
+            <h3>Request Service</h3>
+            <!--
+              ACTION REQUIRED: create /thanks.html at ensolio.com, or update
+              the _next value below to a URL that actually exists — otherwise
+              users will land on a 404 after submitting this form.
+            -->
+            <form action="https://formspree.io/f/xreykqkb" method="POST">
+              <input type="hidden" name="_subject" value="New EnSolio Website Request" />
+              <input type="hidden" name="_next" value="https://ensolio.com/thanks.html" />
+
+              <!-- sr-only labels keep inputs accessible without changing the visual layout -->
+              <label class="sr-only" for="name">Your name</label>
+              <input id="name" type="text" name="name" placeholder="Your name" required />
+
+              <label class="sr-only" for="email">Your email</label>
+              <input id="email" type="email" name="email" placeholder="Your email" required />
+
+              <label class="sr-only" for="phone">Phone number</label>
+              <!-- type="tel" triggers the numeric keypad on mobile -->
+              <input id="phone" type="tel" name="phone" placeholder="Phone number" />
+
+              <label class="sr-only" for="service">Select a service</label>
+              <select id="service" name="service" required>
+                <option value="">Select a service</option>
+                <option>Property Maintenance</option>
+                <option>Unit Turnover</option>
+                <option>Repair Request</option>
+                <option>Installations</option>
+                <option>Preventive Maintenance</option>
+                <option>Operations Support</option>
+                <option>Other</option>
+              </select>
+
+              <label class="sr-only" for="message">Tell us about the project</label>
+              <textarea id="message" name="message" placeholder="Tell us about the project" required></textarea>
+
+              <button class="btn btn-primary" type="submit">Request Service</button>
+            </form>
+            <p class="footer-note">We typically respond within 1 business day.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- role="contentinfo" signals the site footer to assistive tech and crawlers -->
+  <footer role="contentinfo">
     <div class="container footer-wrap">
-      <!-- FIX: use HTML entity &copy; for proper encoding -->
       <div>&copy; 2026 EnSolio LLC. All rights reserved.</div>
       <div class="footer-links">
         <a href="#services">Services</a>
