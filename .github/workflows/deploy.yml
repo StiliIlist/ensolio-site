@@ -2,21 +2,29 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+
+permissions:
+  contents: write
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out repository
+        uses: actions/checkout@v4
 
       - name: Inject secrets into HTML
         run: |
-          sed -i 's/FORMSPREE_PLACEHOLDER/${{ secrets.FORMSPREE_ID }}/g' index.html
-          sed -i 's/GOOGLE_VERIFY_PLACEHOLDER/${{ secrets.GOOGLE_VERIFY }}/g' index.html
+          sed -i "s/FORMSPREE_PLACEHOLDER/${{ secrets.FORMSPREE_ID }}/g" index.html
+          sed -i "s/GOOGLE_VERIFY_PLACEHOLDER/${{ secrets.GOOGLE_VERIFY }}/g" index.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./
+          publish_branch: gh-pages
+          cname: ensolio.com
