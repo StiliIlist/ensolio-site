@@ -1,68 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thank You | EnSolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You | EnSolio</title>
+  <meta name="description" content="Thank you for contacting EnSolio. We have received your request and will respond within one business day." />
+  <meta name="robots" content="noindex, follow" />
 
-<style>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 
-body{
-font-family: Arial, sans-serif;
-background:#f5f7fa;
-margin:0;
-display:flex;
-align-items:center;
-justify-content:center;
-height:100vh;
-}
+  <style>
+    :root{
+      --navy:#0d1f35;
+      --blue:#5ba3e8;
+      --light:#f5f7fa;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --white:#ffffff;
+      --shadow:0 12px 30px rgba(0,0,0,0.10);
+      --radius:18px;
+    }
 
-.card{
-background:white;
-padding:40px;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-text-align:center;
-max-width:500px;
-}
+    *{box-sizing:border-box;}
 
-h1{
-color:#0b2d4d;
-margin-bottom:15px;
-}
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+      background:linear-gradient(rgba(13,31,53,0.92), rgba(13,31,53,0.92));
+      font-family:'DM Sans', sans-serif;
+      color:var(--text);
+    }
 
-p{
-color:#555;
-font-size:18px;
-}
+    .card{
+      width:100%;
+      max-width:560px;
+      background:var(--white);
+      padding:42px 34px;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      text-align:center;
+    }
 
-.btn{
-display:inline-block;
-margin-top:25px;
-padding:12px 20px;
-background:#c9a227;
-color:#111;
-font-weight:bold;
-border-radius:30px;
-text-decoration:none;
-}
+    .eyebrow{
+      font-size:12px;
+      letter-spacing:0.14em;
+      text-transform:uppercase;
+      color:var(--blue);
+      font-weight:600;
+      margin-bottom:14px;
+    }
 
-</style>
+    h1{
+      margin:0 0 14px;
+      color:var(--navy);
+      font-family:'DM Serif Display', serif;
+      font-size:42px;
+      font-weight:400;
+      line-height:1.1;
+    }
+
+    p{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.65;
+    }
+
+    .hook{
+      font-style:italic;
+      color:var(--navy);
+      margin-top:4px;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:24px;
+      padding:13px 22px;
+      background:var(--blue);
+      color:#fff;
+      font-weight:600;
+      border-radius:999px;
+      text-decoration:none;
+      transition:opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn:hover{
+      opacity:0.92;
+      transform:translateY(-1px);
+    }
+
+    .small{
+      margin-top:18px;
+      font-size:14px;
+      color:#94a3b8;
+    }
+
+    @media (max-width:640px){
+      .card{
+        padding:34px 24px;
+      }
+
+      h1{
+        font-size:34px;
+      }
+
+      p{
+        font-size:16px;
+      }
+    }
+  </style>
 </head>
-
 <body>
-
-<div class="card">
-
-<h1>Thank You!</h1>
-
-<p>Your request has been received.</p>
-
-<p>EnSolio will review your message and respond within one business day.</p>
-
-<a href="https://ensolio.com" class="btn">Return to Website</a>
-
-</div>
-
+  <div class="card">
+    <div class="eyebrow">EnSolio</div>
+    <h1>Thank you</h1>
+    <p>Your request has been received.</p>
+    <p>EnSolio will review your message and respond within one business day.</p>
+    <p class="hook">Photo-documented every visit. No surprises.</p>
+    <a href="https://ensolio.com/" class="btn">Return to Website</a>
+    <div class="small">Property Operations &amp; Maintenance</div>
+  </div>
 </body>
 </html>
