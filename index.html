@@ -71,11 +71,11 @@
     ]
   }
   </script>
+
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      /* CHANGED: navy aligned to card's #0d1f35 */
       --navy:#0d1f35;
       --navy-mid:#18334f;
       --gold:#c9a227;
@@ -96,7 +96,6 @@
     *{box-sizing:border-box;}
     html{scroll-behavior:smooth;}
 
-    /* CHANGED: font-family from Arial to DM Sans */
     body{
       margin:0;
       font-family:'DM Sans', sans-serif;
@@ -129,7 +128,6 @@
       min-height:74px;
     }
 
-    /* CHANGED: brand now uses DM Serif Display to match card wordmark */
     .brand{
       font-size:26px;
       font-weight:400;
@@ -196,7 +194,6 @@
       color:rgba(255,255,255,0.8);
     }
 
-    /* CHANGED: h1 now uses DM Serif Display for premium feel matching the card */
     .hero h1{
       font-family:'DM Serif Display', serif;
       font-size:clamp(36px, 5.5vw, 60px);
@@ -214,7 +211,6 @@
       line-height:1.65;
     }
 
-    /* CHANGED: value hook line added — italic DM Serif to match card's hook style */
     .hero-hook{
       font-family:'DM Serif Display', serif;
       font-style:italic;
@@ -265,7 +261,6 @@
       padding:28px;
     }
 
-    /* CHANGED: hero card title uses DM Serif */
     .hero-card h3{
       margin-top:0;
       font-size:20px;
@@ -282,7 +277,6 @@
 
     .hero-card li{margin-bottom:10px;font-size:15px;}
 
-    /* CHANGED: trust bar — new section below hero for social proof signals */
     .trust-bar{
       background:var(--navy);
       padding:18px 0;
@@ -323,7 +317,6 @@
       margin-bottom:42px;
     }
 
-    /* CHANGED: section headings use DM Serif Display */
     .section-head h2{
       margin:0 0 10px;
       font-size:34px;
@@ -354,7 +347,6 @@
       border-top:3px solid var(--navy);
     }
 
-    /* CHANGED: card headings use DM Serif */
     .card h3{
       margin:0 0 10px;
       color:var(--navy);
@@ -368,6 +360,63 @@
       color:var(--gray);
       font-size:15px;
     }
+
+    /* ── How It Works ─────────────────────────── */
+    .hiw-steps{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:22px;
+    }
+
+    .hiw-step{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:32px 26px;
+      box-shadow:var(--shadow);
+      border-top:3px solid var(--blue-accent);
+      opacity:0;
+      transform:translateY(16px);
+      transition:opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .hiw-step.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .hiw-step:nth-child(1){transition-delay:0s;}
+    .hiw-step:nth-child(2){transition-delay:0.1s;}
+    .hiw-step:nth-child(3){transition-delay:0.2s;}
+
+    .hiw-num{
+      width:48px;
+      height:48px;
+      border-radius:50%;
+      background:var(--navy);
+      color:var(--white);
+      font-family:'DM Serif Display', serif;
+      font-size:20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:20px;
+    }
+
+    .hiw-step h3{
+      font-family:'DM Serif Display', serif;
+      font-weight:400;
+      font-size:20px;
+      color:var(--navy);
+      margin:0 0 10px;
+    }
+
+    .hiw-step p{
+      margin:0;
+      color:var(--gray);
+      font-size:15px;
+      line-height:1.65;
+    }
+    /* ─────────────────────────────────────────── */
 
     .service-area{background:#eef3f8;}
 
@@ -404,7 +453,6 @@
       border:0;
     }
 
-    /* CHANGED: gallery section — removed placeholder text, replaced with real section intro */
     .projects{
       display:grid;
       grid-template-columns:repeat(3, 1fr);
@@ -440,7 +488,6 @@
       font-size:14px;
     }
 
-    /* CHANGED: About section — new, introduces Stilian by name */
     .about{
       background:var(--navy);
       color:var(--white);
@@ -639,6 +686,16 @@
       color:var(--white);
       padding:34px 0;
       margin-top:30px;
+      position:relative;
+    }
+
+    footer::before{
+      content:'';
+      position:absolute;
+      top:0;left:0;right:0;
+      height:3px;
+      background:linear-gradient(90deg, #1a4a8a 0%, var(--blue-accent) 50%, #1a4a8a 100%);
+      opacity:0.5;
     }
 
     .footer-wrap{
@@ -677,17 +734,6 @@
       font-size:13px;
     }
 
-    /* Bottom accent line in footer — mirrors card's bottom accent */
-    footer{position:relative;}
-    footer::before{
-      content:'';
-      position:absolute;
-      top:0;left:0;right:0;
-      height:3px;
-      background:linear-gradient(90deg, #1a4a8a 0%, var(--blue-accent) 50%, #1a4a8a 100%);
-      opacity:0.5;
-    }
-
     @media (max-width: 980px){
       .hero-grid,
       .service-box,
@@ -695,9 +741,9 @@
       .about-inner{
         grid-template-columns:1fr;
       }
-
       .cards{grid-template-columns:repeat(2, 1fr);}
       .projects{grid-template-columns:1fr;}
+      .hiw-steps{grid-template-columns:1fr;}
     }
 
     @media (max-width: 680px){
@@ -706,7 +752,6 @@
         align-items:flex-start;
         padding:14px 0;
       }
-
       .nav-links{gap:14px;}
       .cards{grid-template-columns:1fr;}
       .hero h1{font-size:38px;}
@@ -723,6 +768,7 @@
       <nav aria-label="Main navigation">
         <div class="nav-links">
           <a href="#services">Services</a>
+          <a href="#how-it-works">How It Works</a>
           <a href="#areas">Service Area</a>
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
@@ -760,6 +806,7 @@
       </div>
     </div>
   </header>
+
   <aside class="trust-bar" aria-label="Service highlights">
     <div class="container trust-bar-inner">
       <div class="trust-item">
@@ -783,6 +830,7 @@
 
   <main>
 
+    <!-- Services -->
     <section id="services" aria-labelledby="services-heading">
       <div class="container">
         <div class="section-head">
@@ -792,7 +840,6 @@
             maintenance and strong follow-through.
           </p>
         </div>
-
         <div class="cards">
           <div class="card">
             <h3>Property Maintenance</h3>
@@ -814,6 +861,34 @@
       </div>
     </section>
 
+    <!-- How It Works (NEW) -->
+    <section id="how-it-works" aria-labelledby="hiw-heading" style="background:var(--light);">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="hiw-heading">How it works</h2>
+          <p>Simple, documented, and built around your schedule — not ours.</p>
+        </div>
+        <div class="hiw-steps">
+          <div class="hiw-step">
+            <div class="hiw-num">1</div>
+            <h3>Submit your request</h3>
+            <p>Tell us what you need — a repair, a turnover, an installation, or ongoing support. You'll hear back within one business day.</p>
+          </div>
+          <div class="hiw-step">
+            <div class="hiw-num">2</div>
+            <h3>We show up and document everything</h3>
+            <p>Every visit is photo-documented from start to finish. You get full visibility on the job without needing to be there yourself.</p>
+          </div>
+          <div class="hiw-step">
+            <div class="hiw-num">3</div>
+            <h3>Clean report. No surprises.</h3>
+            <p>After every job you receive a documented summary of the work completed — a clear record, every time, ready to share with owners or tenants.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Area -->
     <section class="service-area" id="areas" aria-labelledby="areas-heading">
       <div class="container">
         <div class="section-head">
@@ -822,7 +897,6 @@
             Based in the Bay Area and serving nearby cities with flexible scheduling and dependable support.
           </p>
         </div>
-
         <div class="service-box">
           <div class="service-copy">
             <h3>Serving San Mateo County and nearby Bay Area locations</h3>
@@ -846,6 +920,8 @@
         </div>
       </div>
     </section>
+
+    <!-- About -->
     <section class="about" id="about" aria-labelledby="about-heading">
       <div class="container"><div class="about-inner">
         <div class="about-identity">
@@ -879,6 +955,7 @@
       </div></div>
     </section>
 
+    <!-- Recent Work -->
     <section id="projects" aria-labelledby="projects-heading">
       <div class="container">
         <div class="section-head">
@@ -888,7 +965,6 @@
             completed across San Mateo County and the Bay Area.
           </p>
         </div>
-
         <div class="projects">
           <div class="project">
             <img
@@ -902,7 +978,6 @@
               <p>Repairs, fixture swaps, adjustments, and general upkeep for rental and owner-occupied properties.</p>
             </div>
           </div>
-
           <div class="project">
             <img
               src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80"
@@ -915,7 +990,6 @@
               <p>Punch-list completion, readiness checks, and installation support between tenants.</p>
             </div>
           </div>
-
           <div class="project">
             <img
               src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80"
@@ -932,6 +1006,7 @@
       </div>
     </section>
 
+    <!-- Contact -->
     <section id="contact" aria-labelledby="contact-heading">
       <div class="container">
         <div class="section-head">
@@ -940,7 +1015,6 @@
             Send your project details and EnSolio will follow up within one business day.
           </p>
         </div>
-
         <div class="contact-wrap">
           <div class="contact-card">
             <h3>Contact EnSolio</h3>
@@ -948,7 +1022,6 @@
               Ready to discuss a repair, turnover, installation, or workplace support need?
               Reach out and share the details.
             </p>
-
             <ul class="contact-list">
               <li>
                 <strong>Email:</strong>
@@ -961,9 +1034,7 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   class="linkedin-link"
-                >
-                  Connect with EnSolio
-                </a>
+                >Connect with EnSolio</a>
               </li>
               <li><strong>Service Area:</strong> San Mateo County and nearby Bay Area cities</li>
               <li>
@@ -972,7 +1043,6 @@
               </li>
               <li><strong>Business:</strong> EnSolio LLC</li>
             </ul>
-
             <div class="contact-extra">
               <h4>What we help with</h4>
               <ul>
@@ -982,7 +1052,6 @@
                 <li>Workplace operations support</li>
               </ul>
             </div>
-
             <div class="trust-note">
               Typically responds within 1 business day.
             </div>
@@ -1033,7 +1102,27 @@
       <div class="footer-brand">En<span>Solio</span></div>
       <div class="footer-links">
         <a href="#services">Services</a>
+        <a href="#how-it-works">How It Works</a>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
-      <
+      </div>
+      <div class="footer-copy">&copy; 2025 EnSolio LLC</div>
+    </div>
+  </footer>
+
+  <script>
+    const hiwSteps = document.querySelectorAll('.hiw-step');
+    const hiwObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          hiwObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    hiwSteps.forEach(s => hiwObserver.observe(s));
+  </script>
+
+</body>
+</html>
