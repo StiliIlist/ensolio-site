@@ -364,7 +364,7 @@
     /* ── How It Works ─────────────────────────── */
     .hiw-steps{
       display:grid;
-      grid-template-columns:repeat(3, 1fr);
+      grid-template-columns:repeat(4, 1fr);
       gap:22px;
     }
 
@@ -385,8 +385,9 @@
     }
 
     .hiw-step:nth-child(1){transition-delay:0s;}
-    .hiw-step:nth-child(2){transition-delay:0.1s;}
-    .hiw-step:nth-child(3){transition-delay:0.2s;}
+    .hiw-step:nth-child(2){transition-delay:0.08s;}
+    .hiw-step:nth-child(3){transition-delay:0.16s;}
+    .hiw-step:nth-child(4){transition-delay:0.24s;}
 
     .hiw-num{
       width:48px;
@@ -411,10 +412,22 @@
     }
 
     .hiw-step p{
-      margin:0;
+      margin:0 0 14px;
       color:var(--gray);
       font-size:15px;
       line-height:1.65;
+    }
+
+    .hiw-list{
+      margin:0;
+      padding-left:18px;
+      color:var(--gray);
+      font-size:14px;
+      line-height:1.7;
+    }
+
+    .hiw-list li{
+      margin-bottom:5px;
     }
     /* ─────────────────────────────────────────── */
 
@@ -743,7 +756,7 @@
       }
       .cards{grid-template-columns:repeat(2, 1fr);}
       .projects{grid-template-columns:1fr;}
-      .hiw-steps{grid-template-columns:1fr;}
+      .hiw-steps{grid-template-columns:1fr 1fr;}
     }
 
     @media (max-width: 680px){
@@ -757,6 +770,7 @@
       .hero h1{font-size:38px;}
       .section-head h2{font-size:28px;}
       .trust-bar-inner{gap:20px;}
+      .hiw-steps{grid-template-columns:1fr;}
     }
   </style>
 </head>
@@ -861,7 +875,7 @@
       </div>
     </section>
 
-    <!-- How It Works (NEW) -->
+    <!-- How It Works -->
     <section id="how-it-works" aria-labelledby="hiw-heading" style="background:var(--light);">
       <div class="container">
         <div class="section-head">
@@ -869,21 +883,52 @@
           <p>Simple, documented, and built around your schedule — not ours.</p>
         </div>
         <div class="hiw-steps">
+
           <div class="hiw-step">
             <div class="hiw-num">1</div>
-            <h3>Submit your request</h3>
-            <p>Tell us what you need — a repair, a turnover, an installation, or ongoing support. You'll hear back within one business day.</p>
+            <h3>Request &amp; response</h3>
+            <p>Tell us what you need — a repair, a turnover, an installation, or ongoing support.</p>
+            <ul class="hiw-list">
+              <li>Submit via website, Thumbtack, or phone</li>
+              <li>We respond within 1 business day</li>
+              <li>We ask any clarifying questions upfront</li>
+            </ul>
           </div>
+
           <div class="hiw-step">
             <div class="hiw-num">2</div>
-            <h3>We show up and document everything</h3>
-            <p>Every visit is photo-documented from start to finish. You get full visibility on the job without needing to be there yourself.</p>
+            <h3>Assessment &amp; quote</h3>
+            <p>We scope the job properly before any work begins.</p>
+            <ul class="hiw-list">
+              <li>Site visit or review of client-provided photos</li>
+              <li>We send a clear, itemized quote</li>
+              <li>No work starts until you approve it</li>
+            </ul>
           </div>
+
           <div class="hiw-step">
             <div class="hiw-num">3</div>
-            <h3>Clean report. No surprises.</h3>
-            <p>After every job you receive a documented summary of the work completed — a clear record, every time, ready to share with owners or tenants.</p>
+            <h3>Approval &amp; scheduling</h3>
+            <p>Once you give the green light, we lock everything in.</p>
+            <ul class="hiw-list">
+              <li>You approve the quote</li>
+              <li>We confirm a date and time that works for you</li>
+              <li>Access details confirmed in advance</li>
+            </ul>
           </div>
+
+          <div class="hiw-step">
+            <div class="hiw-num">4</div>
+            <h3>We execute and document the entire job</h3>
+            <p>We show up on time and see it through to completion.</p>
+            <ul class="hiw-list">
+              <li>Every task completed to spec</li>
+              <li>Photo-documented before, during, and after</li>
+              <li>You receive a clean summary report</li>
+              <li>Shareable with owners or tenants</li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </section>
@@ -1025,7 +1070,7 @@
             <ul class="contact-list">
               <li>
                 <strong>Email:</strong>
-                <a href="mailto:info@ensolio.com">info@ensolio.com</a>
+                <a href="/cdn-cgi/l/email-protection#0a63646c654a6f64796566636524696567"><span class="__cf_email__" data-cfemail="abc2c5cdc4ebcec5d8c4c7c2c485c8c4c6">[email&#160;protected]</span></a>
               </li>
               <li>
                 <strong>LinkedIn:</strong>
@@ -1111,18 +1156,8 @@
     </div>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const hiwSteps = document.querySelectorAll('.hiw-step');
     const hiwObserver = new IntersectionObserver(entries => {
       entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          hiwObserver.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    hiwSteps.forEach(s => hiwObserver.observe(s));
-  </script>
-
-</body>
-</html>
+        if (
