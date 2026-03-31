@@ -374,20 +374,6 @@
       padding:32px 26px;
       box-shadow:var(--shadow);
       border-top:3px solid var(--blue-accent);
-      opacity:1;
-      transform:translateY(0);
-      transition:opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    @media (prefers-reduced-motion: no-preference){
-      .hiw-step{
-        opacity:0;
-        transform:translateY(16px);
-      }
-      .hiw-step.visible{
-        opacity:1;
-        transform:translateY(0);
-      }
     }
 
     .hiw-step:nth-child(1){transition-delay:0s;}
@@ -1162,8 +1148,5 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    const hiwSteps = document.querySelectorAll('.hiw-step');
-    const hiwObserver = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (
+</body>
+</html>
