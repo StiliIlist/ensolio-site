@@ -153,6 +153,32 @@
 
     .nav-links a:hover{color:var(--white);}
 
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .nav-phone{
+      display:inline-flex;
+      align-items:center;
+      padding:10px 16px;
+      border:1px solid rgba(255,255,255,0.22);
+      border-radius:999px;
+      color:var(--white);
+      font-size:14px;
+      font-weight:500;
+      background:rgba(255,255,255,0.06);
+      transition:0.2s ease;
+      white-space:nowrap;
+    }
+
+    .nav-phone:hover{
+      background:rgba(255,255,255,0.12);
+      border-color:rgba(255,255,255,0.35);
+    }
+
     .nav-cta{
       display:inline-block;
       background:var(--blue-accent);
@@ -162,6 +188,7 @@
       font-weight:500;
       font-size:14px;
       transition:opacity 0.2s;
+      white-space:nowrap;
     }
 
     .nav-cta:hover{opacity:0.88;}
@@ -361,7 +388,6 @@
       font-size:15px;
     }
 
-    /* ── How It Works ─────────────────────────── */
     .hiw-steps{
       display:grid;
       grid-template-columns:repeat(4, 1fr);
@@ -421,7 +447,6 @@
     .hiw-list li{
       margin-bottom:5px;
     }
-    /* ─────────────────────────────────────────── */
 
     .service-area{background:#eef3f8;}
 
@@ -749,6 +774,9 @@
       .cards{grid-template-columns:repeat(2, 1fr);}
       .projects{grid-template-columns:1fr;}
       .hiw-steps{grid-template-columns:1fr 1fr;}
+      .nav{
+        flex-wrap:wrap;
+      }
     }
 
     @media (max-width: 680px){
@@ -757,7 +785,21 @@
         align-items:flex-start;
         padding:14px 0;
       }
-      .nav-links{gap:14px;}
+
+      .nav-links{
+        gap:14px;
+      }
+
+      .nav-right{
+        width:100%;
+        justify-content:flex-start;
+      }
+
+      .nav-phone,
+      .nav-cta{
+        width:auto;
+      }
+
       .cards{grid-template-columns:1fr;}
       .hero h1{font-size:38px;}
       .section-head h2{font-size:28px;}
@@ -771,6 +813,7 @@
   <div class="topbar">
     <div class="container nav">
       <a href="#home" class="brand">En<span>Solio</span></a>
+
       <nav aria-label="Main navigation">
         <div class="nav-links">
           <a href="#services">Services</a>
@@ -781,7 +824,11 @@
           <a href="#contact">Contact</a>
         </div>
       </nav>
-      <a class="nav-cta" href="#contact">Request Quote</a>
+
+      <div class="nav-right">
+        <a class="nav-phone" href="tel:+14802783938">(480) 278-3938</a>
+        <a class="nav-cta" href="#contact">Request Quote</a>
+      </div>
     </div>
   </div>
 
