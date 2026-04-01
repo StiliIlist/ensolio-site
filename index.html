@@ -388,6 +388,7 @@
       font-size:15px;
     }
 
+    /* ── How It Works ─────────────────────────── */
     .hiw-steps{
       display:grid;
       grid-template-columns:repeat(4, 1fr);
@@ -401,11 +402,6 @@
       box-shadow:var(--shadow);
       border-top:3px solid var(--blue-accent);
     }
-
-    .hiw-step:nth-child(1){transition-delay:0s;}
-    .hiw-step:nth-child(2){transition-delay:0.08s;}
-    .hiw-step:nth-child(3){transition-delay:0.16s;}
-    .hiw-step:nth-child(4){transition-delay:0.24s;}
 
     .hiw-num{
       width:48px;
@@ -444,9 +440,8 @@
       line-height:1.7;
     }
 
-    .hiw-list li{
-      margin-bottom:5px;
-    }
+    .hiw-list li{margin-bottom:5px;}
+    /* ─────────────────────────────────────────── */
 
     .service-area{background:#eef3f8;}
 
@@ -577,13 +572,8 @@
       line-height:1.75;
     }
 
-    .about-bio p{
-      margin:0 0 16px;
-    }
-
-    .about-bio p:last-child{
-      margin:0;
-    }
+    .about-bio p{margin:0 0 16px;}
+    .about-bio p:last-child{margin:0;}
 
     .contact-wrap{
       display:grid;
@@ -597,7 +587,7 @@
       background:var(--white);
       border-radius:18px;
       padding:30px;
-      box-shadow:0 8px 24px rgba(15, 23, 42, 0.08);
+      box-shadow:0 8px 24px rgba(15,23,42,0.08);
     }
 
     .contact-card h3,
@@ -616,23 +606,12 @@
       list-style:none;
     }
 
-    .contact-list li{
-      margin-bottom:14px;
-      color:var(--gray);
-    }
+    .contact-list li{margin-bottom:14px;color:var(--gray);}
 
-    .contact-list a{
-      color:var(--gray);
-      text-decoration:none;
-    }
-
+    .contact-list a{color:var(--gray);text-decoration:none;}
     .contact-list a:hover{text-decoration:underline;}
 
-    .linkedin-link{
-      color:var(--linkedin) !important;
-      font-weight:600;
-    }
-
+    .linkedin-link{color:var(--linkedin) !important;font-weight:600;}
     .linkedin-link:hover{color:var(--linkedin-dark) !important;}
 
     .contact-extra{
@@ -649,12 +628,7 @@
       font-weight:400;
     }
 
-    .contact-extra ul{
-      margin:0;
-      padding-left:18px;
-      color:var(--gray);
-    }
-
+    .contact-extra ul{margin:0;padding-left:18px;color:var(--gray);}
     .contact-extra li{margin-bottom:8px;}
 
     .trust-note{
@@ -671,10 +645,8 @@
 
     .sr-only{
       position:absolute;
-      width:1px;
-      height:1px;
-      padding:0;
-      margin:-1px;
+      width:1px;height:1px;
+      padding:0;margin:-1px;
       overflow:hidden;
       clip:rect(0,0,0,0);
       white-space:nowrap;
@@ -692,24 +664,15 @@
       transition:border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
-    input:focus,
-    select:focus,
-    textarea:focus{
+    input:focus, select:focus, textarea:focus{
       outline:none;
       border-color:var(--blue-accent);
       box-shadow:0 0 0 3px rgba(91,163,232,0.15);
     }
 
-    textarea{
-      min-height:130px;
-      resize:vertical;
-    }
+    textarea{min-height:130px;resize:vertical;}
 
-    .footer-note{
-      color:var(--gray);
-      font-size:14px;
-      margin-top:12px;
-    }
+    .footer-note{color:var(--gray);font-size:14px;margin-top:12px;}
 
     footer{
       background:var(--navy);
@@ -745,11 +708,7 @@
 
     .footer-brand span{color:var(--blue-accent);}
 
-    .footer-links{
-      display:flex;
-      gap:18px;
-      flex-wrap:wrap;
-    }
+    .footer-links{display:flex;gap:18px;flex-wrap:wrap;}
 
     .footer-links a{
       color:rgba(255,255,255,0.6);
@@ -759,47 +718,24 @@
 
     .footer-links a:hover{color:var(--white);}
 
-    .footer-copy{
-      color:rgba(255,255,255,0.4);
-      font-size:13px;
-    }
+    .footer-copy{color:rgba(255,255,255,0.4);font-size:13px;}
 
     @media (max-width: 980px){
       .hero-grid,
       .service-box,
       .contact-wrap,
-      .about-inner{
-        grid-template-columns:1fr;
-      }
+      .about-inner{grid-template-columns:1fr;}
       .cards{grid-template-columns:repeat(2, 1fr);}
       .projects{grid-template-columns:1fr;}
       .hiw-steps{grid-template-columns:1fr 1fr;}
-      .nav{
-        flex-wrap:wrap;
-      }
+      .nav{flex-wrap:wrap;}
     }
 
     @media (max-width: 680px){
-      .nav{
-        flex-direction:column;
-        align-items:flex-start;
-        padding:14px 0;
-      }
-
-      .nav-links{
-        gap:14px;
-      }
-
-      .nav-right{
-        width:100%;
-        justify-content:flex-start;
-      }
-
-      .nav-phone,
-      .nav-cta{
-        width:auto;
-      }
-
+      .nav{flex-direction:column;align-items:flex-start;padding:14px 0;}
+      .nav-links{gap:14px;}
+      .nav-right{width:100%;justify-content:flex-start;}
+      .nav-phone,.nav-cta{width:auto;}
       .cards{grid-template-columns:1fr;}
       .hero h1{font-size:38px;}
       .section-head h2{font-size:28px;}
@@ -813,18 +749,17 @@
   <div class="topbar">
     <div class="container nav">
       <a href="#home" class="brand">En<span>Solio</span></a>
-
       <nav aria-label="Main navigation">
         <div class="nav-links">
           <a href="#services">Services</a>
           <a href="#how-it-works">How It Works</a>
           <a href="#areas">Service Area</a>
           <a href="#about">About</a>
+          <a href="#reviews">Reviews</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
         </div>
       </nav>
-
       <div class="nav-right">
         <a class="nav-phone" href="tel:+14802783938">(480) 278-3938</a>
         <a class="nav-cta" href="#contact">Request Quote</a>
@@ -862,22 +797,10 @@
 
   <aside class="trust-bar" aria-label="Service highlights">
     <div class="container trust-bar-inner">
-      <div class="trust-item">
-        <div class="trust-dot"></div>
-        Serving San Mateo County &amp; Bay Area
-      </div>
-      <div class="trust-item">
-        <div class="trust-dot"></div>
-        Responds within 1 business day
-      </div>
-      <div class="trust-item">
-        <div class="trust-dot"></div>
-        Photo-documented every visit
-      </div>
-      <div class="trust-item">
-        <div class="trust-dot"></div>
-        Residential &amp; small commercial
-      </div>
+      <div class="trust-item"><div class="trust-dot"></div>Serving San Mateo County &amp; Bay Area</div>
+      <div class="trust-item"><div class="trust-dot"></div>Responds within 1 business day</div>
+      <div class="trust-item"><div class="trust-dot"></div>Photo-documented every visit</div>
+      <div class="trust-item"><div class="trust-dot"></div>Residential &amp; small commercial</div>
     </div>
   </aside>
 
@@ -888,10 +811,7 @@
       <div class="container">
         <div class="section-head">
           <h2 id="services-heading">Services</h2>
-          <p>
-            Practical support for properties and workplaces that need reliable
-            maintenance and strong follow-through.
-          </p>
+          <p>Practical support for properties and workplaces that need reliable maintenance and strong follow-through.</p>
         </div>
         <div class="cards">
           <div class="card">
@@ -969,11 +889,9 @@
           </div>
 
         </div>
-
-        <div style="text-align:center; margin-top:40px;">
+        <div style="text-align:center;margin-top:40px;">
           <a class="btn btn-primary" href="#contact">Request a Free Quote</a>
         </div>
-
       </div>
     </section>
 
@@ -982,9 +900,7 @@
       <div class="container">
         <div class="section-head">
           <h2 id="areas-heading">Service Area</h2>
-          <p>
-            Based in the Bay Area and serving nearby cities with flexible scheduling and dependable support.
-          </p>
+          <p>Based in the Bay Area and serving nearby cities with flexible scheduling and dependable support.</p>
         </div>
         <div class="service-box">
           <div class="service-copy">
@@ -1023,25 +939,34 @@
         <div class="about-bio">
           <p>
             EnSolio was built on a simple premise: property owners and managers
-            deserve a maintenance partner who operates like a professional —  a predictable, process‑driven partner you can rely on every time. 
-            Every job is documented, every
-            follow-up is handled, and every property is left in better shape
-            than it was found.
+            deserve a maintenance partner who operates like a professional — a predictable,
+            process-driven partner you can rely on every time. Every job is documented,
+            every follow-up is handled, and every property is left in better shape than it was found.
           </p>
           <p>
-            With a background in operations and systems, Stilian brings
-            process-driven thinking to property maintenance — coordinating
-            vendors, managing punch lists, and running preventive programs
-            that keep units compliant and tenant-ready across San Mateo County
+            With a background in operations and systems, Stilian brings process-driven thinking
+            to property maintenance — coordinating vendors, managing punch lists, and running
+            preventive programs that keep units compliant and tenant-ready across San Mateo County
             and the broader Bay Area.
           </p>
           <p>
-            Whether you manage two units or twenty, EnSolio operates as an
-            extension of your team — so you can stop chasing contractors and
-            start trusting the work is done.
+            Whether you manage two units or twenty, EnSolio operates as an extension of your team —
+            so you can stop chasing contractors and start trusting the work is done.
           </p>
         </div>
       </div></div>
+    </section>
+
+    <!-- Thumbtack Reviews -->
+    <section id="reviews" aria-labelledby="reviews-heading" style="background:#eef3f8;">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="reviews-heading">What clients say</h2>
+          <p>Reviews from property managers and landlords across San Mateo County.</p>
+        </div>
+        <div class='sk-ww-thumbtack-reviews' data-embed-id='25668284'></div>
+        <script src='https://widgets.sociablekit.com/thumbtack-reviews/widget.js' defer></script>
+      </div>
     </section>
 
     <!-- Recent Work -->
@@ -1049,18 +974,14 @@
       <div class="container">
         <div class="section-head">
           <h2 id="projects-heading">Recent Work</h2>
-          <p>
-            A sample of property maintenance, turnover, and operations work
-            completed across San Mateo County and the Bay Area.
-          </p>
+          <p>A sample of property maintenance, turnover, and operations work completed across San Mateo County and the Bay Area.</p>
         </div>
         <div class="projects">
           <div class="project">
             <img
               src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80"
               alt="Residential property maintenance project in San Mateo County"
-              width="1200" height="220"
-              loading="lazy"
+              width="1200" height="220" loading="lazy"
             />
             <div class="project-body">
               <h3>Residential Maintenance</h3>
@@ -1071,8 +992,7 @@
             <img
               src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80"
               alt="Unit turnover and kitchen readiness work between tenants"
-              width="1200" height="220"
-              loading="lazy"
+              width="1200" height="220" loading="lazy"
             />
             <div class="project-body">
               <h3>Unit Turnover Support</h3>
@@ -1083,8 +1003,7 @@
             <img
               src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80"
               alt="Workplace operations and facilities support in the Bay Area"
-              width="1200" height="220"
-              loading="lazy"
+              width="1200" height="220" loading="lazy"
             />
             <div class="project-body">
               <h3>Workplace Operations</h3>
@@ -1100,38 +1019,22 @@
       <div class="container">
         <div class="section-head">
           <h2 id="contact-heading">Request a Quote</h2>
-          <p>
-            Send your project details and EnSolio will follow up within one business day.
-          </p>
+          <p>Send your project details and EnSolio will follow up within one business day.</p>
         </div>
         <div class="contact-wrap">
           <div class="contact-card">
             <h3>Contact EnSolio</h3>
-            <p>
-              Ready to discuss a repair, turnover, installation, or workplace support need?
-              Reach out and share the details.
-            </p>
-            <ul class="<ul class="contact-list">
-  <li>
-    <strong>Email:</strong>
-    <a href="mailto:info@ensolio.com">info@ensolio.com</a>
-  </li>
-  <li>
-    <strong>LinkedIn:</strong>
-    <a
-      href="https://www.linkedin.com/company/ensolio/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="linkedin-link"
-    >Connect with EnSolio</a>
-  </li>
-  <li><strong>Service Area:</strong> San Mateo County and nearby Bay Area cities</li>
-  <li>
-    <strong>Phone:</strong>
-    <a href="tel:+14802783938">(480) 278-3938</a>
-  </li>
-  <li><strong>Business:</strong> EnSolio LLC</li>
-</ul>
+            <p>Ready to discuss a repair, turnover, installation, or workplace support need? Reach out and share the details.</p>
+            <ul class="contact-list">
+              <li><strong>Email:</strong> <a href="mailto:info@ensolio.com">info@ensolio.com</a></li>
+              <li>
+                <strong>LinkedIn:</strong>
+                <a href="https://www.linkedin.com/company/ensolio/" target="_blank" rel="noopener noreferrer" class="linkedin-link">Connect with EnSolio</a>
+              </li>
+              <li><strong>Service Area:</strong> San Mateo County and nearby Bay Area cities</li>
+              <li><strong>Phone:</strong> <a href="tel:+14802783938">(480) 278-3938</a></li>
+              <li><strong>Business:</strong> EnSolio LLC</li>
+            </ul>
             <div class="contact-extra">
               <h4>What we help with</h4>
               <ul>
@@ -1141,9 +1044,7 @@
                 <li>Workplace operations support</li>
               </ul>
             </div>
-            <div class="trust-note">
-              Typically responds within 1 business day.
-            </div>
+            <div class="trust-note">Typically responds within 1 business day.</div>
           </div>
 
           <div class="form-card">
@@ -1151,16 +1052,12 @@
             <form action="https://formspree.io/f/xreykqkb" method="POST">
               <input type="hidden" name="_subject" value="New EnSolio Website Request" />
               <input type="hidden" name="_next" value="https://ensolio.com/thanks.html" />
-
               <label class="sr-only" for="name">Your name</label>
               <input id="name" type="text" name="name" placeholder="Your name" required />
-
               <label class="sr-only" for="email">Your email</label>
               <input id="email" type="email" name="email" placeholder="Your email" required />
-
               <label class="sr-only" for="phone">Phone number</label>
               <input id="phone" type="tel" name="phone" placeholder="Phone number" />
-
               <label class="sr-only" for="service">Select a service</label>
               <select id="service" name="service" required>
                 <option value="">Select a service</option>
@@ -1172,10 +1069,8 @@
                 <option>Operations Support</option>
                 <option>Other</option>
               </select>
-
               <label class="sr-only" for="message">Tell us about the project</label>
               <textarea id="message" name="message" placeholder="Tell us about the project" required></textarea>
-
               <button class="btn btn-primary" type="submit">Request Service</button>
             </form>
             <p class="footer-note">We typically respond within 1 business day.</p>
@@ -1193,6 +1088,7 @@
         <a href="#services">Services</a>
         <a href="#how-it-works">How It Works</a>
         <a href="#about">About</a>
+        <a href="#reviews">Reviews</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </div>
