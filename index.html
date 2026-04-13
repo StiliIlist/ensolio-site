@@ -388,7 +388,6 @@
       font-size:15px;
     }
 
-    /* ── How It Works ─────────────────────────── */
     .hiw-steps{
       display:grid;
       grid-template-columns:repeat(4, 1fr);
@@ -441,7 +440,6 @@
     }
 
     .hiw-list li{margin-bottom:5px;}
-    /* ─────────────────────────────────────────── */
 
     .service-area{background:#eef3f8;}
 
@@ -674,25 +672,115 @@
 
     .footer-note{color:var(--gray);font-size:14px;margin-top:12px;}
 
-    /* ── Reviews placeholder ─────────────────── */
-    .reviews-placeholder{
+    /* ── Reviews ─────────────────────────────── */
+    .reviews-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:22px;
+    }
+
+    .review-card{
       background:var(--white);
-      border:2px dashed var(--border);
       border-radius:var(--radius);
-      padding:48px 32px;
-      text-align:center;
-      color:var(--gray);
+      padding:28px;
+      box-shadow:var(--shadow);
+      border-top:3px solid var(--blue-accent);
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      position:relative;
+    }
+
+    .review-card::before{
+      content:'\201C';
+      position:absolute;
+      top:14px;
+      right:20px;
+      font-family:'DM Serif Display', serif;
+      font-size:60px;
+      line-height:1;
+      color:var(--blue-accent);
+      opacity:0.15;
+      pointer-events:none;
+    }
+
+    .review-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px;
+    }
+
+    .review-author{display:flex;flex-direction:column;gap:3px;}
+
+    .review-name{font-weight:600;font-size:15px;color:var(--navy);}
+
+    .review-service{font-size:13px;color:var(--gray);}
+
+    .review-stars{display:flex;gap:2px;}
+
+    .review-stars svg{width:16px;height:16px;fill:#f59e0b;flex-shrink:0;}
+
+    .review-text{
+      color:var(--dark);
       font-size:15px;
       line-height:1.7;
+      flex:1;
+      margin:0;
     }
 
-    .reviews-placeholder p{
-      margin:0 0 8px;
+    .review-footer{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding-top:14px;
+      border-top:1px solid var(--border);
+      margin-top:auto;
     }
 
-    .reviews-placeholder .reviews-link{
-      display:inline-block;
-      margin-top:16px;
+    .review-date{font-size:12px;color:var(--gray);}
+
+    .review-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:5px;
+      background:#f0f9f4;
+      border:1px solid #bbf0d6;
+      border-radius:999px;
+      padding:4px 10px;
+      font-size:12px;
+      font-weight:500;
+      color:#15803d;
+    }
+
+    .review-badge svg{width:12px;height:12px;fill:#16a34a;}
+
+    /* faded placeholder cards */
+    .review-card.placeholder{
+      opacity:0.42;
+      pointer-events:none;
+      border-top-color:var(--border);
+    }
+
+    .review-card.placeholder .review-stars svg{fill:#d1d5db;}
+
+    .review-card.placeholder .review-badge{
+      background:#f5f5f5;
+      border-color:#e5e7eb;
+      color:#9ca3af;
+    }
+
+    .review-card.placeholder .review-badge svg{fill:#9ca3af;}
+
+    .reviews-cta{
+      text-align:center;
+      margin-top:36px;
+    }
+
+    .reviews-cta a{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
       color:var(--blue-accent);
       font-size:14px;
       font-weight:500;
@@ -701,9 +789,7 @@
       padding-bottom:2px;
     }
 
-    .reviews-placeholder .reviews-link:hover{
-      border-color:var(--blue-accent);
-    }
+    .reviews-cta a:hover{border-color:var(--blue-accent);}
     /* ─────────────────────────────────────────── */
 
     footer{
@@ -761,6 +847,7 @@
       .projects{grid-template-columns:1fr;}
       .hiw-steps{grid-template-columns:1fr 1fr;}
       .nav{flex-wrap:wrap;}
+      .reviews-grid{grid-template-columns:1fr;}
     }
 
     @media (max-width: 680px){
@@ -989,23 +1076,97 @@
       </div></div>
     </section>
 
-    <!-- Reviews (placeholder — add real client quotes here) -->
+    <!-- Reviews -->
     <section id="reviews" aria-labelledby="reviews-heading" style="background:#eef3f8;">
       <div class="container">
         <div class="section-head">
           <h2 id="reviews-heading">What clients say</h2>
-          <p>Reviews from property managers and landlords across San Mateo County.</p>
+          <p>Reviews from property managers and homeowners across San Mateo County.</p>
         </div>
-        <div class="reviews-placeholder">
-          <p>Client reviews coming soon.</p>
-          <p>Add individual testimonials here as you collect them.</p>
+
+        <div class="reviews-grid">
+
+          <!-- ✅ REAL REVIEW — Joe M. -->
+          <div class="review-card">
+            <div class="review-top">
+              <div class="review-author">
+                <div class="review-name">Joe M.</div>
+                <div class="review-service">Handyman</div>
+              </div>
+              <div class="review-stars" aria-label="5 out of 5 stars">
+                <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+            </div>
+            <p class="review-text">
+              Quick and easy turnaround on a few projects I had lying around forever that I was too lazy to do myself. He was in and out in about an hour with all projects completed to my liking. He even gave me some suggestions on where to place certain items to make my apartment more functional. Definitely used his tips and haven't regretted it at all. 5 stars!
+            </p>
+            <div class="review-footer">
+              <span class="review-date">Oct 10, 2025</span>
+              <span class="review-badge">
+                <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                Verified · Thumbtack
+              </span>
+            </div>
+          </div>
+
+          <!-- PLACEHOLDER 2 — replace with next real review -->
+          <div class="review-card placeholder">
+            <div class="review-top">
+              <div class="review-author">
+                <div class="review-name">Your next review</div>
+                <div class="review-service">Property Maintenance</div>
+              </div>
+              <div class="review-stars" aria-hidden="true">
+                <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+            </div>
+            <p class="review-text" style="font-style:italic;color:var(--gray);">Replace this with a real client review when you collect more on Thumbtack.</p>
+            <div class="review-footer">
+              <span class="review-date">—</span>
+              <span class="review-badge">Pending</span>
+            </div>
+          </div>
+
+          <!-- PLACEHOLDER 3 — replace with next real review -->
+          <div class="review-card placeholder">
+            <div class="review-top">
+              <div class="review-author">
+                <div class="review-name">Your next review</div>
+                <div class="review-service">Unit Turnover</div>
+              </div>
+              <div class="review-stars" aria-hidden="true">
+                <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <svg viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              </div>
+            </div>
+            <p class="review-text" style="font-style:italic;color:var(--gray);">Replace this with a real client review when you collect more on Thumbtack.</p>
+            <div class="review-footer">
+              <span class="review-date">—</span>
+              <span class="review-badge">Pending</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="reviews-cta">
           <a
             href="https://www.thumbtack.com/ca/millbrae/handyman/stilian/service/515833858714943497"
             target="_blank"
             rel="noopener noreferrer"
-            class="reviews-link"
           >See all reviews on Thumbtack &rarr;</a>
         </div>
+
       </div>
     </section>
 
